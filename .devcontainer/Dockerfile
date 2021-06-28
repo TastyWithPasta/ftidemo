@@ -7,9 +7,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 # Install Python 3.9
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt -y install software-properties-common
 RUN sudo add-apt-repository ppa:deadsnakes/ppa
-RUN sudo apt -y install python3.9
-RUN alias python=python3
+RUN sudo apt -y install python3.9 pip
 
 # Install docker (running on docker local socket for dind effect)
-RUN whoami
 RUN curl -fsSL https://get.docker.com | sh -
